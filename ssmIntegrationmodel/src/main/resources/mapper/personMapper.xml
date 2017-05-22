@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+        "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<!--命名空间可以自定义，但是习惯上是包名+映射文件名，可以保证唯一-->
+<mapper namespace="com.pad.dao.TestDao">
+    <!--依次为指定id到时候调用，指定参数类型（这里p_id为int所以是int），指定返回类型，这里返回的是User类-->
+    <select id="queryById" parameterType="int"  resultType="com.pad.entity.Person">
+        select p_id,p_name from Person where p_id=#{p_id};
+    </select>
+    <insert id="addPerson" parameterType="com.pad.entity.Person">
+        insert into person(p_name) values(#{p_name});
+    </insert>
+    <!--<delete id="deletePerson" parameterType="int">-->
+        <!--delete from Person where p_id=#{u_id}-->
+    <!--</delete>-->
+    <!--<update id="updatePerson" parameterType="com.pad.entity.Person">-->
+        <!--update user set p_name=#{p_name} where p_id=#{p_id}-->
+    <!--</update>-->
+</mapper>
