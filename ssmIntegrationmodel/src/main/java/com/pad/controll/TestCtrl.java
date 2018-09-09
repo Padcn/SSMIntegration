@@ -10,7 +10,7 @@ import javax.annotation.Resource;
  * Created by pad on 17-5-21.
  */
 @Controller
-public class testCtrl {
+public class TestCtrl {
     @Resource
     TestService testService;
 
